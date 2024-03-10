@@ -1,7 +1,7 @@
 <?php
 session_start();
 // connect to database
-$conn = mysqli_connect("localhost", "Admin", "Brachi 15", "rftinsider");
+$conn = mysqli_connect("localhost:3306", "rftinsider", "Brachi 15", "rftinsider");
 
 if (!$conn) {
     die("Error connecting to database: " . mysqli_connect_error());
