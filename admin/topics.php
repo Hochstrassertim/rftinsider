@@ -30,9 +30,9 @@ $topic_name = "";
             <input type="text" name="topic_name" value="<?php echo $topic_name; ?>" placeholder="Kategorie">
             <!-- if editing topic, display the update button instead of create button -->
             <?php if ($isEditingTopic === true): ?>
-                <button type="submit" class="btn" name="update_topic">UPDATE</button>
+                <button type="submit" class="btn" name="update_topic">Aktualisieren</button>
             <?php else: ?>
-                <button type="submit" class="btn" name="create_topic">Save Topic</button>
+                <button type="submit" class="btn" name="create_topic">Speichern</button>
             <?php endif ?>
         </form>
     </div>
