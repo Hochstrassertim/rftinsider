@@ -1,7 +1,7 @@
 <?php  include('config.php'); ?>
 <?php  include('includes/registration_login.php'); ?>
 <?php  include('includes/head_section.php'); ?>
-<title>LifeBlog | Sign in </title>
+<title>RFT Insider - Anmelden</title>
 </head>
 <body>
 <div class="container">
@@ -17,7 +17,7 @@
             <input type="password" name="password" placeholder="Password">
             <button type="submit" class="btn" name="login_btn">Login</button>
             <p>
-                Not yet a member? <a href="register.php">Sign up</a>
+                Noch kein Mitglied? <a href="register.php">Registrieren</a>
             </p>
         </form>
     </div>
