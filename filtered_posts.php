@@ -8,7 +8,7 @@ if (isset($_GET['topic'])) {
     $posts = getPublishedPostsByTopic($topic_id);
 }
 ?>
-<title>LifeBlog | Home </title>
+<title>RFT Insider - Kategorie</title>
 </head>
 <body>
 <div class="container">
@@ -18,7 +18,7 @@ if (isset($_GET['topic'])) {
     <!-- content -->
     <div class="content">
         <h2 class="content-title">
-            Articles on <u><?php echo getTopicNameById($topic_id); ?></u>
+            Artikel in Kategorie <u><?php echo getTopicNameById($topic_id); ?></u>
         </h2>
         <hr>
         <?php foreach ($posts as $post): ?>
@@ -29,7 +29,7 @@ if (isset($_GET['topic'])) {
                         <h3><?php echo $post['title'] ?></h3>
                         <div class="info">
                             <span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-                            <span class="read_more">Read more...</span>
+                            <span class="read_more">Mehr erfahren...</span>
                         </div>
                     </div>
                 </a>

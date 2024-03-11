@@ -7,7 +7,7 @@ if (isset($_GET['post-slug'])) {
 $topics = getAllTopics();
 ?>
 <?php include('includes/head_section.php'); ?>
-    <title> <?php echo $post['title'] ?> | LifeBlog</title>
+    <title> <?php echo $post['title'] ?> - RFT Insider</title>
     </head>
     <body>
 <div class="container">
@@ -21,7 +21,7 @@ $topics = getAllTopics();
             <!-- full post div -->
             <div class="full-post-div">
                 <?php if ($post['published'] == false): ?>
-                    <h2 class="post-title">Sorry... This post has not been published</h2>
+                    <h2 class="post-title">Dieser Post wurde noch nicht veröffentlicht</h2>
                 <?php else: ?>
                     <h2 class="post-title"><?php echo $post['title']; ?></h2>
                     <div class="post-body-div">
