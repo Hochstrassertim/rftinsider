@@ -8,5 +8,5 @@ if (!$conn) {
 }
 // define global constants
 define ('ROOT_PATH', realpath(dirname(__FILE__)));
-define('BASE_URL', 'http://localhost/rftinsider/new/complete-blog-php/new/');
+define('BASE_URL', 'https://rftinsider.ch/');
 ?>
