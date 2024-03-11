@@ -14,7 +14,7 @@ $post_topic = "";
 ?>
 <!-- Get all topics -->
 <?php $topics = getAllTopics();      ?>
-<title>Admin | Create Post</title>
+<title>Admin - Post erstellen</title>
 </head>
 <body>
 <!-- admin navbar -->
@@ -26,7 +26,7 @@ $post_topic = "";
 
     <!-- Middle form - to create and edit  -->
     <div class="action create-post-div">
-        <h1 class="page-title">Create/Edit Post</h1>
+        <h1 class="page-title">Post erstellen/bearbeiten</h1>
         <form method="post" enctype="multipart/form-data" action="<?php echo BASE_URL . 'admin/create_post.php'; ?>" >
             <!-- validation errors for the form -->
             <?php include(ROOT_PATH . '/includes/errors.php') ?>
@@ -36,12 +36,12 @@ $post_topic = "";
                 <input type="hidden" name="post_id" value="<?php echo $post_id; ?>">
             <?php endif ?>
 
-            <input type="text" name="title" value="<?php echo $title; ?>" placeholder="Title">
-            <label style="float: left; margin: 5px auto 5px;">Featured image</label>
+            <input type="text" name="title" value="<?php echo $title; ?>" placeholder="Titel">
+            <label style="float: left; margin: 5px auto 5px;">Angehängtes Bild</label>
             <input type="file" name="featured_image" >
             <textarea name="body" id="body" cols="30" rows="10"><?php echo $body; ?></textarea>
             <select name="topic_id">
-                <option value="" selected disabled>Choose topic</option>
+                <option value="" selected disabled>Kategorie auswählen</option>
                 <?php foreach ($topics as $topic): ?>
                     <option value="<?php echo $topic['id']; ?>">
                         <?php echo $topic['name']; ?>
@@ -54,12 +54,12 @@ $post_topic = "";
                 <!-- display checkbox according to whether post has been published or not -->
                 <?php if ($published == true): ?>
                     <label for="publish">
-                        Publish
+                        Veröffentlichen
                         <input type="checkbox" value="1" name="publish" checked="checked">&nbsp;
                     </label>
                 <?php else: ?>
                     <label for="publish">
-                        Publish
+                        Veröffentlichen
                         <input type="checkbox" value="1" name="publish">&nbsp;
                     </label>
                 <?php endif ?>
@@ -67,9 +67,9 @@ $post_topic = "";
 
             <!-- if editing post, display the update button instead of create button -->
             <?php if ($isEditingPost === true): ?>
-                <button type="submit" class="btn" name="update_post">UPDATE</button>
+                <button type="submit" class="btn" name="update_post">Aktualisieren</button>
             <?php else: ?>
-                <button type="submit" class="btn" name="create_post">Save Post</button>
+                <button type="submit" class="btn" name="create_post">Speichern</button>
             <?php endif ?>
 
         </form>

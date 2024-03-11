@@ -5,7 +5,7 @@
 
 <!-- Get all admin posts from DB -->
 <?php $posts = getAllPosts(); ?>
-<title>Admin | Manage Posts</title>
+<title>Admin - Posts verwalten</title>
 </head>
 <body>
 <!-- admin navbar -->
@@ -21,7 +21,7 @@
         <?php include(ROOT_PATH . '/includes/messages.php') ?>
 
         <?php if (empty($posts)): ?>
-            <h1 style="text-align: center; margin-top: 20px;">No posts in the database.</h1>
+            <h1 style="text-align: center; margin-top: 20px;">Keine Posts vorhanden</h1>
         <?php else: ?>
             <table class="table">
                 <thead>
