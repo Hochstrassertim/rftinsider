@@ -6,7 +6,7 @@ $admins = getAdminUsers();
 $roles = ['Admin', 'Author'];
 ?>
 <?php include(ROOT_PATH . '/admin/includes/head_section.php'); ?>
-<title>Admin | Manage users</title>
+<title>Admin - Benutzer verwalten</title>
 </head>
 <body>
 <!-- admin navbar -->
@@ -16,7 +16,7 @@ $roles = ['Admin', 'Author'];
     <?php include(ROOT_PATH . '/admin/includes/menu.php') ?>
     <!-- Middle form - to create and edit  -->
     <div class="action">
-        <h1 class="page-title">Create/Edit Admin User</h1>
+        <h1 class="page-title">Benutzer erstellen/bearbeiten</h1>
 
         <form method="post" action="<?php echo BASE_URL . 'admin/users.php'; ?>" >
 
@@ -28,12 +28,12 @@ $roles = ['Admin', 'Author'];
                 <input type="hidden" name="admin_id" value="<?php echo $admin_id; ?>">
             <?php endif ?>
 
-            <input type="text" name="username" value="<?php echo $username; ?>" placeholder="Username">
+            <input type="text" name="username" value="<?php echo $username; ?>" placeholder="Benutzername">
             <input type="email" name="email" value="<?php echo $email ?>" placeholder="Email">
-            <input type="password" name="password" placeholder="Password">
-            <input type="password" name="passwordConfirmation" placeholder="Password confirmation">
+            <input type="password" name="password" placeholder="Passwort">
+            <input type="password" name="passwordConfirmation" placeholder="Passwort bestätigen">
             <select name="role">
-                <option value="" selected disabled>Assign role</option>
+                <option value="" selected disabled>Rolle auswählen</option>
                 <?php foreach ($roles as $key => $role): ?>
                     <option value="<?php echo $role; ?>"><?php echo $role; ?></option>
                 <?php endforeach ?>
@@ -41,9 +41,9 @@ $roles = ['Admin', 'Author'];
 
             <!-- if editing user, display the update button instead of create button -->
             <?php if ($isEditingUser === true): ?>
-                <button type="submit" class="btn" name="update_admin">UPDATE</button>
+                <button type="submit" class="btn" name="update_admin">Aktualisieren</button>
             <?php else: ?>
-                <button type="submit" class="btn" name="create_admin">Save User</button>
+                <button type="submit" class="btn" name="create_admin">Speichern</button>
             <?php endif ?>
         </form>
     </div>
@@ -55,14 +55,14 @@ $roles = ['Admin', 'Author'];
         <?php include(ROOT_PATH . '/includes/messages.php') ?>
 
         <?php if (empty($admins)): ?>
-            <h1>No admins in the database.</h1>
+            <h1>Keine Benutzer vorhanden</h1>
         <?php else: ?>
             <table class="table">
                 <thead>
-                <th>N</th>
-                <th>Admin</th>
-                <th>Role</th>
-                <th colspan="2">Action</th>
+                <th>Nummer</th>
+                <th>Benutzername, Email</th>
+                <th>Rolle</th>
+                <th colspan="2">Aktionen</th>
                 </thead>
                 <tbody>
                 <?php foreach ($admins as $key => $admin): ?>

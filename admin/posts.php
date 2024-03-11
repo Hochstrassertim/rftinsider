@@ -25,16 +25,16 @@
         <?php else: ?>
             <table class="table">
                 <thead>
-                <th>N</th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Views</th>
+                <th>Nummer</th>
+                <th>Titel</th>
+                <th>Autor</th>
+                <th>Angesehen</th>
                 <!-- Only Admin can publish/unpublish post -->
                 <?php if ($_SESSION['user']['role'] == "Admin"): ?>
-                    <th><small>Publish</small></th>
+                    <th><small>Veröffentlicht</small></th>
                 <?php endif ?>
-                <th><small>Edit</small></th>
-                <th><small>Delete</small></th>
+                <th><small>Bearbeiten</small></th>
+                <th><small>Löschen</small></th>
                 </thead>
                 <tbody>
                 <?php foreach ($posts as $key => $post): ?>

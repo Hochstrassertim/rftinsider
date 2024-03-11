@@ -8,7 +8,7 @@ $topic_name = "";
 ?>
 <!-- Get all topics from DB -->
 <?php $topics = getAllTopics();      ?>
-<title>Admin | Manage Topics</title>
+<title>Admin - Kategorien verwalten</title>
 </head>
 <body>
 <!-- admin navbar -->
@@ -19,7 +19,7 @@ $topic_name = "";
 
     <!-- Middle form - to create and edit -->
     <div class="action">
-        <h1 class="page-title">Create/Edit Topics</h1>
+        <h1 class="page-title">Kategorien erstellen/bearbeiten</h1>
         <form method="post" action="<?php echo BASE_URL . 'admin/topics.php'; ?>" >
             <!-- validation errors for the form -->
             <?php include(ROOT_PATH . '/includes/errors.php') ?>
@@ -27,7 +27,7 @@ $topic_name = "";
             <?php if ($isEditingTopic === true): ?>
                 <input type="hidden" name="topic_id" value="<?php echo $topic_id; ?>">
             <?php endif ?>
-            <input type="text" name="topic_name" value="<?php echo $topic_name; ?>" placeholder="Topic">
+            <input type="text" name="topic_name" value="<?php echo $topic_name; ?>" placeholder="Kategorie">
             <!-- if editing topic, display the update button instead of create button -->
             <?php if ($isEditingTopic === true): ?>
                 <button type="submit" class="btn" name="update_topic">UPDATE</button>
@@ -43,13 +43,13 @@ $topic_name = "";
         <!-- Display notification message -->
         <?php include(ROOT_PATH . '/includes/messages.php') ?>
         <?php if (empty($topics)): ?>
-            <h1>No topics in the database.</h1>
+            <h1>Keine Kategorien vorhanden</h1>
         <?php else: ?>
             <table class="table">
                 <thead>
-                <th>N</th>
-                <th>Topic Name</th>
-                <th colspan="2">Action</th>
+                <th>Nummer</th>
+                <th>Name</th>
+                <th colspan="2">Aktionen</th>
                 </thead>
                 <tbody>
                 <?php foreach ($topics as $key => $topic): ?>
