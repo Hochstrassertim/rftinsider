@@ -6,7 +6,7 @@
 <!-- Retrieve all posts from database  -->
 <?php $posts = getPublishedPosts(); ?>
 <?php require_once( ROOT_PATH . '/includes/head_section.php') ?>
-<title>LifeBlog | Home </title>
+<title>RFT Insider - Home</title>
 </head>
 <body>
 <!-- container - wraps whole page -->
@@ -21,14 +21,14 @@
 
     <!-- Page content -->
     <div class="content">
-        <h2 class="content-title">Recent Articles</h2>
+        <h2 class="content-title">Neueste Artikel</h2>
         <hr>
         <!-- more content still to come here ... -->
 
         <!-- Add this ... -->
         <?php foreach ($posts as $post): ?>
             <div class="post" style="margin-left: 0px;">
-                <img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="">
+                <img src="<?php echo BASE_URL . '/static/images/' . $post['image']; ?>" class="post_image" alt="Bild konnte nicht geladen werden">
                 <!-- Added this if statement... -->
                 <?php if (isset($post['topic']['name'])): ?>
                     <a
@@ -43,7 +43,7 @@
                         <h3><?php echo $post['title'] ?></h3>
                         <div class="info">
                             <span><?php echo date("F j, Y ", strtotime($post["created_at"])); ?></span>
-                            <span class="read_more">Read more...</span>
+                            <span class="read_more">Mehr erfahren...</span>
                         </div>
                     </div>
                 </a>
